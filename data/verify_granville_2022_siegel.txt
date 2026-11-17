@@ -1,0 +1,72 @@
+========================================================================
+1. Proposition 2 (p. 7) versus its proof (p. 16)
+========================================================================
+[PASS] relative loss 1/A + C^2/B = delta (1/t + C^2 t)
+[PASS] coefficient kappa(t) = 2(1 + C^2 t^2)
+[PASS] at t = 1 (stated scale): A = B = 1/delta
+[PASS] at t = 1: 1 - beta = log q/(log y)^2
+[PASS] at t = 1/C (proof's choice): A = 1/(C delta), B = C/delta
+[PASS] at t = 1/C: 1 - beta = log q/(C log y)^2 (p. 16, as printed)
+[PASS] at t = 1/C: relative loss = 2 C delta (p. 16, as printed)
+[PASS] at t = 1/C: delta = log q/(C log y), NOT log q/log y (last line of p. 16)
+[PASS] at t = 1/C: kappa = 4 (C cancels), not 4C
+[PASS] t = 1/C minimises the relative loss delta(1/t + C^2 t)
+[PASS] 2(1+C^2) - 4C = 2(1-C)^2 > 0 for C != 1
+   C(u) = 0.7071 on [1,2];  C(3) = 0.3917;  range [0.3917, 0.7071]
+   u in [1,2]: true 2(1+C^2) = 3.0000   printed 4C = 2.8284
+   u = 3     : true 2(1+C^2) = 2.3069   printed 4C = 1.5668   ratio = 1.4723
+[PASS] C(3) = sqrt((1-log 2)/2)
+[PASS] ratio true/printed at u=3 equals 1.472 (to 3 d.p.)
+[PASS] 2(1+C^2) > 4C on all of [1,3]
+   first bullet (p. 7): (2y/log y)*2C*delta = 4C delta y/log y -- consistent with the relative-loss form
+========================================================================
+2. Fourth bullet (p. 7): 1-beta <= q^{-eps}
+========================================================================
+   log log y = log t + (1/2) log log q + (1/2) log 1/(1-beta) >= (eps/2) log q + O(log log q + |log t|)
+   so log q <= (2/eps + o(1)) log log y, and the secondary term
+   kappa(t) y log q/(log y)^2 <= (2 kappa(t)/eps + o(1/eps)) y loglog y/(log y)^2,  2 kappa(t) = 4(1 + C^2 t^2).
+   t = 1   : eps*K = 4(1+C^2) = 6.0000 (u in [1,2]),  4.6137 (u = 3)
+   t = 1/C : eps*K = 8
+   t -> 0  : eps*K -> 4 (infimum, not attained)
+   printed 4C converted: eps*K = 8C in [3.1336, 5.6569]
+   printed: eps*K = 2
+[PASS] numerical: min over t in [1e-6,10], u in [1,3] of 4(1+C^2 t^2) exceeds 4 - 1e-9
+   eps=0.2, log q=1000: log q / log log y_q = 9.6661  vs 2/eps = 10.0000
+   eps=0.1, log q=10000: log q / log log y_q = 19.8175  vs 2/eps = 20.0000
+   eps=0.05, log q=100000: log q / log log y_q = 39.9081  vs 2/eps = 40.0000
+[PASS] log q/log log y_q -> 2/eps from below (concrete profiles)
+========================================================================
+3. Section 4 (pp. 17-18): w versus w^2
+========================================================================
+[PASS] log y = 2 sqrt(log q/(1-beta))  =>  (1-beta)(log y)^2 = 4 log q
+[PASS] y = (wz)^2: log(q w^2) + log q = 2 log(q w)  (8 log(qw) as printed)
+[PASS] y = W z^2:  log(q W) + log q = 2 log(q sqrt W)
+[PASS] relation for W = w^2 is identical to the w^2-relation: 4 W log(q sqrt W) = 4 w^2 log(q w)
+   Comparison with the heuristic min S ~ 2e^{-gamma}(log x)^2/log y, z ~ log x, gives
+   e^{-gamma} log y <~ 4 (y/z^2) log(q sqrt(y/z^2)) ; printed: e^{-gamma} log y <~ 4 w log(qw) with y = (wz)^2.
+     log q    delta      W=y/z^2    w printed          w^2  e^-g/(2 delta)
+       100    0.001     273.0705     265.8852     70694.94        280.7297
+       100     0.01      27.6148      27.1756       738.51         28.0730
+       100      0.1       2.7930       2.7789         7.72          2.8073
+     10000    0.001     280.6506     280.5716     78720.42        280.7297
+     10000     0.01      28.0683      28.0636       787.57         28.0730
+     10000      0.1       2.8072       2.8070         7.88          2.8073
+[PASS] W and printed w agree to within 3% (both ~ e^-gamma/(2 delta)); w^2 differs by orders of magnitude
+[PASS] 1-beta = (log q)^{-kappa}: 1/delta = (log log p)^{1-2/(kappa+1)} (prediction on p. 18 holds for W)
+========================================================================
+4. Theorem 1 (p. 10): uniformity of the induction near x' = z^{k-1}
+========================================================================
+   For k >= u both sides of Theorem 1 vanish (pi_k(z^u, z) = 0), so no hypothesis k < u is needed.
+   z = 2000: relative size of an O(pi(x')) error against pi_1(x', z) = pi(x') - pi(z)
+     x' = z^(1+1.0): pi(x')/pi_1(x',z) =       1.00
+     x' = z^(1+0.3): pi(x')/pi_1(x',z) =       1.16
+     x' = z^(1+0.1): pi(x')/pi_1(x',z) =       2.07
+     x' = z^(1+0.03): pi(x')/pi_1(x',z) =       5.66
+     x' = z^(1+0.01): pi(x')/pi_1(x',z) =      14.77
+     x' = z^(1+0.003): pi(x')/pi_1(x',z) =      51.50
+[PASS] pi(x')/pi_1(x',z) is unbounded as x' -> z+ (relative form of the k=1 case fails)
+     u = 2.1: sum_(z<p<=x/z) pi(z) / (x/log z) = 0.0765   (1/log(x/z) = 0.1196)
+     u = 2.2: sum_(z<p<=x/z) pi(z) / (x/log z) = 0.1045   (1/log(x/z) = 0.1096)
+[PASS] boundary contribution sum_p pi(z) <= 1.1 (x/log z)/log(x/z), i.e. o(x/log z)
+========================================================================
+TOTAL FAILURES: 0
