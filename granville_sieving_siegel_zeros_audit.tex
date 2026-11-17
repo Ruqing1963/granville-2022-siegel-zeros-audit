@@ -30,7 +30,7 @@
 \begin{document}
 \begin{abstract}
 We check the quantitative statements near the sifting limit in A.~Granville, \emph{Sieving intervals and
-Siegel zeros}, Acta Arith.\ \textbf{204} (2022), 297--315. (i) The last line of the proof of
+Siegel zeros}, Acta Arith.\ \textbf{205} (2022), 1--19. (i) The last line of the proof of
 Proposition~2 replaces $\sqrt{(1-\beta_q)\log q}$ by $\log q/\log y$, although the scale chosen two lines
 earlier gives $\log q/(C(u)\log y)$. With the correct substitution the secondary term is
 $4y\log q/(\log y)^2$, not $4C(u)y\log q/(\log y)^2$. At the scale $\log y_q=(\log q/(1-\beta_q))^{1/2}$
@@ -39,7 +39,7 @@ term for every $u\in[1,3]$ (by $47\%$ at $u=3$). We state the corrected proposit
 (ii) In the regime $1-\beta_q\le q^{-\eps}$ the printed constant $2/\eps$ does not follow. The argument
 gives $4(1+C(u)^2)/\eps$ at the stated scale, $8/\eps$ at the optimised scale, and at best
 $(4+o(1))/\eps$. (iii) In the modified Cram\'er heuristic of Section~4 the parameter $w$ is defined by
-$y=(wz)^2$ but used as $y/z^2$. With $W=y/z^2$ throughout, the stated predictions are unchanged.
+$y=(wz)^2$ but used as $y/(\log x)^2$. With $W=y/(\log x)^2$ throughout, the predictions are unchanged.
 (iv) The induction proving Theorem~1 applies a relative error term near the boundary of its range, where it
 fails. We give an absolute version that is uniform. The first three bullets after Proposition~2, Theorem~1,
 and the prime-gap predictions all stand.
@@ -56,7 +56,7 @@ Proposition~2, which affects the stated constant and the fourth bullet after it.
 inconsistency between $w$ and $w^2$ in the heuristic of Section~4, and a uniformity issue in the induction
 for Theorem~1. None of these affects the qualitative results, and all of them have short repairs.
 
-Page numbers refer to the Online First pagination of \cite{G} (pp.~1--19, corresponding to pp.~297--315 of the print volume). Throughout,
+Page numbers refer to the published version of \cite{G} (pp.~1--19, identical to the Online First pagination). Throughout,
 $\delta=\delta_q:=\sqrt{(1-\beta_q)\log q}\to0$, $\log y_q:=(\log q/(1-\beta_q))^{1/2}$, and
 $C=C(u)=\bigl(\tfrac12(1-\log^+(u-1))\bigr)^{1/2}$. Note that $C(u)=1/\sqrt2$ on $[1,2]$ and
 $C(3)=\sqrt{(1-\log2)/2}=0.3917\ldots$. All identities below were checked symbolically, and all numbers
@@ -129,7 +129,8 @@ the condition $y=q^A$ with $A\to\infty$ used in the proof.
 
 The first bullet after Proposition~2 has secondary term $(4\delta_0C(u)+o(1))\,y/\log y$ when
 $1-\beta_q\le\delta_0^2/\log q$, that is, when $\delta_q\le\delta_0$. This is exactly the first form at
-$t=1/C$, so the first bullet is correct. The second and third bullets have unspecified
+$t=1/C$, so the first bullet is correct at that scale; at the stated scale $y=y_q$ ($t=1$) the
+coefficient is $2(1+C(u)^2)\delta_0$. The second and third bullets have unspecified
 constants and are unaffected.
 
 \section{The fourth bullet after Proposition 2}\label{sec:bullet4}
@@ -160,7 +161,7 @@ $(\log\log y)^2$ on p.~8 is unaffected.
 \includegraphics[width=\textwidth]{figures/fig_granville_2022_audit.pdf}
 \caption{(a) The coefficient $\kappa$ of $y\log q/(\log y)^2$ in Proposition~2 against $u$. The right
 axis shows the corresponding constant $\eps K=2\kappa$ in the fourth bullet. (b) The normalised gap
-$y/z^2$ in Section~4 against $\delta$. Blue: the consistent relation for $W=y/z^2$. Red: $w^2$, where $w$
+$y/z^2$ in Section~4 against $\delta$, for $z=\log x$. Blue: the consistent relation for $W=y/z^2$. Red: $w^2$, where $w$
 solves the printed relation and $y=(wz)^2$. The blue curves coincide with Granville's $w$ to within
 $3\%$.}\label{fig:main}
 \end{figure}
@@ -175,12 +176,12 @@ S(X,y,z)\lesssim\frac{8y}{(\log y)^2}\log(qw),
 which is correct because $\log(qw^2)+\log q=2\log(qw)$. The comparison on p.~18 with the heuristic of \cite{GL},
 $\min_XS\sim2e^{-\gamma}(\log x)^2/\log y$, where $z\asymp\log x$, gives
 \[
-e^{-\gamma}\log y\ \lesssim\ 4\,\frac{y}{z^2}\,\log\Bigl(q\sqrt{y/z^2}\Bigr)=4w^2\log(qw),
+e^{-\gamma}\log y\ \lesssim\ 4\,W\log(qw),\qquad W:=\frac{y}{(\log x)^2},
 \]
-not $e^{-\gamma}\log y\lesssim4w\log(qw)$ as printed. If $z=c\log x$, the right side carries an extra
-factor $c^2$. In the subsequent predictions the bound for $w$ is read as a bound for
-$(p_{n+1}-p_n)/(\log p_n)^2\asymp y/z^2$. That is the right reading for $W:=y/z^2$, but not for $w$, since
-$y/z^2=w^2$. The clean version uses $W$ throughout:
+not $e^{-\gamma}\log y\lesssim4w\log(qw)$ as printed. In the subsequent predictions the bound for $w$ is
+read as a bound for $(p_{n+1}-p_n)/(\log p_n)^2\asymp W$. That is the right reading for $W$, but not for
+$w$: if $z=c\log x$ then $W=c^2w^2$ (so $W=y/z^2=w^2$ for $c=1$, as in Figure~\ref{fig:main}(b)), and
+$\log(qw)=\log(q\sqrt W)+O(1)$. The clean version uses $W$ throughout:
 \begin{gather*}
 S(X,y,z)\lesssim\frac{8y}{(\log y)^2}\log\bigl(q\sqrt W\bigr),\qquad
 e^{-\gamma}\log y\lesssim4W\log\bigl(q\sqrt W\bigr),\\
@@ -188,7 +189,7 @@ W\gtrsim\frac{e^{-\gamma}\log y}{4\log q}=\frac{e^{-\gamma}/2}{\sqrt{(1-\beta)\l
 \end{gather*}
 This is the bound printed for $w$, now for the correct quantity. All predictions on p.~18 then follow as
 stated. For example, $1-\beta\asymp(\log q)^{-\kappa}$ gives
-$1/\delta=(\log\log p_n)^{1-2/(\kappa+1)}$. Figure~\ref{fig:main}(b) shows $W$ and $w^2$: the literal
+$1/\delta\asymp(\log\log p_n)^{1-2/(\kappa+1)}$. Figure~\ref{fig:main}(b) shows $W$ and $w^2$: the literal
 reading $y=(wz)^2$ with the printed $w$ would square the predicted normalised gap.
 
 \section{Theorem 1: uniformity in the induction}\label{sec:thm1}
@@ -243,8 +244,8 @@ is $\ll\varDelta\sum_{z<p\le x/z}\pi(z)/\phi(q)\ll\varDelta x/(\phi(q)\log z\,\l
 $z=2000$ and $u=2.2$ the sum is $0.10\,x/\log z$. The conclusions of Theorem~1 and Corollary~5 stand.
 
 \begin{thebibliography}{9}
-\bibitem{G} A.~Granville, \emph{Sieving intervals and Siegel zeros}, Acta Arith.\ \textbf{204} (2022),
-297--315, \href{https://doi.org/10.4064/aa201002-25-6}{doi:10.4064/aa201002-25-6}; arXiv:2010.01211.
+\bibitem{G} A.~Granville, \emph{Sieving intervals and Siegel zeros}, Acta Arith.\ \textbf{205} (2022),
+no.~1, 1--19, \href{https://doi.org/10.4064/aa201002-25-6}{doi:10.4064/aa201002-25-6}; arXiv:2010.01211.
 \bibitem{GL} A.~Granville and A.~Lumley, \emph{Primes in short intervals: heuristics and calculations},
 Exp.\ Math.\ \textbf{32} (2023), no.~2, 378--404, \href{https://doi.org/10.1080/10586458.2021.1927256}{doi:10.1080/10586458.2021.1927256}.
 \end{thebibliography}

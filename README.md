@@ -2,7 +2,7 @@
 
 Ruqing Chen (2026). doi:[10.5281/zenodo.24296574](https://doi.org/10.5281/zenodo.24296574)
 
-A. Granville, *Sieving intervals and Siegel zeros*, Acta Arith. 204 (2022), 297–315
+A. Granville, *Sieving intervals and Siegel zeros*, Acta Arith. 205 (2022), no. 1, 1–19
 (doi:[10.4064/aa201002-25-6](https://doi.org/10.4064/aa201002-25-6)), shows that under infinitely many Siegel zeros
 the linear-sieve bounds are attained by intervals, and gives explicit secondary terms near the sifting limit.
 This note checks those secondary terms, the prime-gap heuristic of Section 4, and the induction for Theorem 1.
@@ -13,13 +13,13 @@ This note checks those secondary terms, the prime-gap heuristic of Section 4, an
   printed `4C(u) y log q/(log y)^2` (by 47% at u = 3 in the second case). A corrected Proposition 2' is given for
   every scale `log y = t log y_q`, with coefficient `2(1 + C(u)^2 t^2)`.
 * **Fourth bullet (1-beta <= q^-eps).** The argument gives `4(1+C^2)/eps` (t = 1), `8/eps` (t = 1/C), and at best
-  `(4+o(1))/eps` (t -> 0), never the printed `2/eps`. The first three bullets stand.
-* **Section 4.** `w` is defined by `y = (wz)^2` but used as `y/z^2`. With `W = y/z^2` throughout, the printed
+  `(4+o(1))/eps` (t -> 0), never the printed `2/eps`. The first three bullets stand (the first at the scale `t = 1/C`).
+* **Section 4.** `w` is defined by `y = (wz)^2` but used as `y/z^2`. With `W = y/(log x)^2` (`= y/z^2` for `z = log x`) throughout, the printed
   bound and all prime-gap predictions hold.
 * **Theorem 1.** The induction uses a relative error near `x' = z^(k-1)`, where it fails; an absolute, uniform
   version is given. Theorem 1 and Corollary 5 stand. (No hypothesis `k < u` is needed: for `k >= u` both sides vanish.)
 
-Page numbers refer to the Online First pagination (pp. 1–19 = pp. 297–315 of the print volume).
+Page numbers refer to the published pagination (pp. 1–19).
 
 | path | content |
 |---|---|
