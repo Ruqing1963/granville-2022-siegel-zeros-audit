@@ -18,6 +18,9 @@
 [PASS] C(3) = sqrt((1-log 2)/2)
 [PASS] ratio true/printed at u=3 equals 1.472 (to 3 d.p.)
 [PASS] 2(1+C^2) > 4C on all of [1,3]
+[PASS] ratio (1+C^2)/(2C) = 1.061 on [1,2]
+[PASS] C(u) < 1/2 exactly for u > 1+sqrt(e) = 2.6487 (printed 4C below every kappa(t))
+[PASS] for C >= 1/2: kappa(t*) = 4C at t* = sqrt(2C-1)/C
    first bullet (p. 7): (2y/log y)*2C*delta = 4C delta y/log y -- consistent with the relative-loss form
 ========================================================================
 2. Fourth bullet (p. 7): 1-beta <= q^{-eps}

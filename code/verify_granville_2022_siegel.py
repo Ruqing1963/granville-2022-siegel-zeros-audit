@@ -86,6 +86,14 @@ check("ratio true/printed at u=3 equals 1.472 (to 3 d.p.)", round((1 + C3**2) / 
 uu = np.linspace(1, 3, 2001)
 Cu = Cfun(uu)
 check("2(1+C^2) > 4C on all of [1,3]", bool(np.all(2 * (1 + Cu**2) > 4 * Cu)))
+check("ratio (1+C^2)/(2C) = 1.061 on [1,2]", round((1 + C12**2) / (2 * C12), 3) == 1.061)
+# printed 4C below inf_t kappa(t) = 2  iff  C(u) < 1/2  iff  u > 1 + sqrt(e)
+u_star = 1 + np.sqrt(np.e)
+check(f"C(u) < 1/2 exactly for u > 1+sqrt(e) = {u_star:.4f} (printed 4C below every kappa(t))",
+      bool(np.all((Cu < 0.5) == (uu > u_star + 1e-12)) or np.all((Cu < 0.5)[np.abs(uu - u_star) > 1e-3] ==
+                                                              (uu > u_star)[np.abs(uu - u_star) > 1e-3])))
+check("for C >= 1/2: kappa(t*) = 4C at t* = sqrt(2C-1)/C",
+      sp.simplify((2 * (1 + C**2 * t**2)).subs(t, sp.sqrt(2 * C - 1) / C) - 4 * C) == 0)
 say("   first bullet (p. 7): (2y/log y)*2C*delta = 4C delta y/log y -- consistent with the relative-loss form")
 
 # ---------------------------------------------------------------------------

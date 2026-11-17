@@ -81,18 +81,26 @@ parameter $t>0$. Then $A=t/\delta$ and $B=1/(t\delta)$, so the relative loss is
 \end{equation}
 where the second form uses $\delta=t\log q/\log y$.
 
-\emph{The stated scale $t=1$.} Here $A=B=1/\delta$ and $1-\beta_q=\log q/(\log y)^2$, so the secondary term
-is $2(1+C^2)y\log q/(\log y)^2$. Since $2(1+C^2)-4C=2(1-C)^2>0$, this exceeds the printed
-$4C\,y\log q/(\log y)^2$ for every $u$: $3$ against $2\sqrt2=2.828$ on $[1,2]$, and $2.307$ against $1.567$
-at $u=3$, a ratio of $1.472$.
+\emph{The stated scale $t=1$.} Here $A=B=1/\delta$ and $1-\beta_q=\log q/(\log y)^2$, so by
+\eqref{eq:loss} the secondary term is $2(1+C^2)y\log q/(\log y)^2$. Since $2(1+C^2)-4C=2(1-C)^2>0$, this is
+larger than the printed $4C\,y\log q/(\log y)^2$ for every $u$: $3$ against $2\sqrt2=2.828$ on $[1,2]$,
+and $2.307$ against $1.567$ at $u=3$. The ratio $(1+C^2)/(2C)$ increases as $C$ decreases, from $1.061$
+on $[1,2]$ to $1.472$ at $u=3$.
 
 \emph{The proof's scale $t=1/C$.} The proof chooses $A=C^{-1}\delta^{-1}$ and $B=C\delta^{-1}$, which is
 $t=1/C$, the minimiser of $1/t+C^2t$. It then records, correctly, $1-\beta=\log q/(C\log y)^2$ and the
-relative loss $2C\sqrt{(1-\beta)\log q}$. The last line, however, uses
-\lq\lq$\sqrt{(1-\beta)\log q}=\log q/\log y$\rq\rq. At this scale the correct identity is
-$\sqrt{(1-\beta)\log q}=\log q/(C\log y)$. Then $C$ cancels and the secondary term is $4y\log q/(\log y)^2$.
-So \eqref{eq:P2} combines the coefficient of one scale with the value of $y$ of another. As stated, it is
-not proved, and we do not decide whether it is true.
+relative loss $2C\delta$. To express this loss as a multiple of $y\log q/(\log y)^2$, one needs $\delta$
+in terms of $\log y$. At $t=1/C$ we have $\delta=t\log q/\log y=\log q/(C\log y)$, so $C$ cancels and the
+coefficient is $4$. The last line uses instead \lq\lq$\sqrt{(1-\beta)\log q}=\log q/\log y$\rq\rq, which is
+the identity at $t=1$. Thus the printed coefficient $4C$ pairs the loss at the scale $t=1/C$ with the
+conversion at the scale $t=1$. It is smaller than the coefficient at either scale, since $4C<2(1+C^2)$
+and $4C<4$.
+
+\emph{No scale rescues \eqref{eq:P2} for $u>1+\sqrt e$.} By \eqref{eq:loss}, $\kappa(t):=2(1+C^2t^2)>2$
+for every $t$. If $C(u)<\frac12$, that is $u>1+\sqrt e=2.649$, then the printed $4C(u)$ is smaller than
+$2$, hence smaller than $\kappa(t)$ at every scale (Figure~\ref{fig:main}(a)). For $u<1+\sqrt e$ the
+printed value is reached only at $t=\sqrt{2C-1}/C$, and not at the stated $t=1$. As stated,
+\eqref{eq:P2} is therefore not proved, and we do not decide whether it is true.
 
 \begin{propc}[corrected form of Proposition 2]
 Assume there are infinitely many Siegel zeros, let $u\in[1,3]$, and let $t=t_q>0$ satisfy
@@ -137,8 +145,12 @@ K(t)=\frac{4(1+C(u)^2t^2)}{\eps},\qquad\text{so}\qquad
 \eps K=4(1+C^2)\ (t=1),\quad \eps K=8\ (t=1/C),\quad \eps K\downarrow4\ (t\to0).
 \]
 Here $4(1+C^2)=6$ on $[1,2]$ and $=6-2\log2=4.614$ at $u=3$. If one inserts the printed coefficient
-$4C(u)$ instead, the result is $\eps K=8C(u)\in[3.134,5.657]$. No admissible scale gives $\eps K=2$. The
-fourth bullet holds with $2/\eps$ replaced by $(4+o(1))/\eps$, taking $t\to0$ slowly. The ratio
+$4C(u)$ instead, the result is $\eps K=8C(u)\in[3.134,5.657]$. Since $\kappa(t)>2$, we have
+$\eps K=2\kappa(t)>4$ at every admissible scale, so $\eps K=2$ is never reached. The infimum $4$ is
+approached by $t=1/\log\log q$. This choice is admissible: $\delta_q\le q^{-\eps/2}(\log q)^{1/2}=o(t)$
+and $\log(1/t)=\log\log\log q=o(\eps\log q)$, both because $\eps\log q/\log\log q\to\infty$ when
+$\eps\to0$ slowly. Hence the fourth bullet holds with $2/\eps$ replaced by $(4+o(1))/\eps$. The printed
+$2/\eps$ would need an argument other than \eqref{eq:AB}. The ratio
 $\log q/\log\log y_q$ indeed tends to $2/\eps$ from below; for example, $9.67$, $19.82$ and $39.91$ for
 $(\eps,\log q)=(0.2,10^3)$, $(0.1,10^4)$ and $(0.05,10^5)$. The comparison with Selberg's
 $(\log\log y)^2$ on p.~8 is unaffected.
@@ -200,15 +212,29 @@ $z^k\le x\le z^U$ with $\varDelta_\beta(x)\le\varDelta$, and $(a,q)=1$,
 \end{lemma}
 
 \begin{proof}[Sketch]
-For $k=1$ this is (8) applied at $x$ and at $z$, since $\pi(x)\ll x/\log z$. In the induction step the
-same decomposition as in \cite{G} gives errors
+\emph{The case $k=1$.} Since $z\ge q^A>q$, no prime in $(z,x]$ divides $q$, so
+$\pi_1(x,z;q,a)=\pi(x;q,a)-\pi(z;q,a)$. Apply (8) at $x$ and at $z$; both are $\ge q^A$, and
+$\varDelta_\beta(z)\le\varDelta_\beta(x)\le\varDelta$. This gives the main term
+$(1-\chi(a))(\pi(x)-\pi(z))/\phi(q)$ with error $O(\varDelta\,\pi(x)/\phi(q))$, and $\pi(x)\ll x/\log z$.
+
+\emph{The step $k-1\to k$.} As on p.~10,
+\[
+\pi_k(x,z;q,a)=\frac1k\sum_{z<p\le x/z^{k-1}}\pi_{k-1}(x/p,z;q,a/p)+O\Bigl(\frac{x}{\phi(q)z\log z}\Bigr),
+\]
+and likewise $\frac1k\sum_p\pi_{k-1,q}(x/p,z)=\pi_{k,q}(x,z)+O(x/(z\log z))$. Each $x/p$ lies in
+$[z^{k-1},z^{U-1}]$, so the case $k-1$ applies to every term, \emph{including those with $x/p$ close to
+$z^{k-1}$}. The reason is that its error term $O(\varDelta\,(x/p)/(\phi(q)\log z))$ does not involve
+$\pi_{k-1,q}(x/p,z)$. Since $\sum_{z<p\le x}1/p\le\log U+O(1)$, these errors add up to
 \[
 \sum_{z<p\le x/z^{k-1}}\frac{\varDelta\,x/p}{\phi(q)\log z}\ll\frac{\varDelta\,x\log U}{\phi(q)\log z}.
 \]
-The
-$p^2$-terms are $\ll x/(\phi(q)z\log z)$, and $1/z\le\varDelta$ by Siegel's theorem. The terms with
-$\chi(p)=1$ are bounded by (8) and partial summation, exactly as on p.~11. None of these bounds uses a
-lower bound for $\pi_{k-1,q}(x/p,z)$.
+In the main terms, $\chi(a/p)=\chi(a)\chi(p)$. When $\chi(p)=-1$ the factor $1+(-1)^{k-1}\chi(a/p)$
+equals $1+(-1)^k\chi(a)$. The primes with $\chi(p)=1$ change it by at most $2$, and they contribute
+$\ll\sum_{\chi(p)=1,\,z<p\le x}x/(p\,\phi(q)\log z)$, using $\pi_{k-1,q}(t,z)\ll_{k,U}t/\log z$. By (8),
+$\#\{p\le t:\chi(p)=1\}\ll\varDelta\,\pi(t)$ for $t\ge q^A$, and partial summation bounds this
+contribution by $\ll\varDelta\,x(1+\log U)/(\phi(q)\log z)$, as on p.~11. Finally,
+$x/(\phi(q)z\log z)\ll\varDelta\,x/(\phi(q)\log z)$, because $1/z\le q^{-A}\ll1-\beta\le\varDelta$ by
+Siegel's theorem.
 \end{proof}
 
 For fixed $u>k$, (9) gives $\pi_{k,q}(z^u,z)\asymp_{k,u}x/\log z$, so Lemma~\ref{lem:abs} implies
